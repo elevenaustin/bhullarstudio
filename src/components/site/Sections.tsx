@@ -247,18 +247,17 @@ export function WhyChooseUs() {
 }
 
 const gallery = [
-  { src: "1519741497674-611481863552", cat: "Wedding", h: 600 },
-  { src: "1606800052052-a08af7148866", cat: "Wedding", h: 800 },
-  { src: "1583939003579-730e3918a45a", cat: "Couple", h: 500 },
-  { src: "1511285560929-80b456fea0bc", cat: "Portrait", h: 700 },
-  { src: "1529636798458-92182e662485", cat: "Wedding", h: 600 },
-  { src: "1525258946800-98cfd641d0de", cat: "Events", h: 750 },
-  { src: "1469371670807-013ccf25f16a", cat: "Couple", h: 600 },
-  { src: "1469594292607-7bd90f8d3ba4", cat: "Fashion", h: 800 },
-  { src: "1515934751635-c81c6bc9a2d8", cat: "Wedding", h: 550 },
-  { src: "1502635385003-ee1e6a1a742d", cat: "Commercial", h: 700 },
-  { src: "1492684223066-81342ee5ff30", cat: "Events", h: 650 },
-  { src: "1494774157365-9e04c6720e47", cat: "Portrait", h: 800 },
+  { url: "/portfolio-1.jpg", cat: "Pre-Wedding", h: 800 },
+  { url: "/portfolio-2.jpg", cat: "Couple Shoot", h: 650 },
+  { url: "/portfolio-3.jpg", cat: "Pre-Wedding", h: 750 },
+  { url: "/portfolio-4.jpg", cat: "Wedding Portrait", h: 700 },
+  { url: "/portfolio-5.jpg", cat: "Couple Shoot", h: 800 },
+  { url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80", cat: "Wedding", h: 600 },
+  { url: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=900&q=80", cat: "Wedding", h: 800 },
+  { url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=900&q=80", cat: "Couple", h: 500 },
+  { url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80", cat: "Portrait", h: 700 },
+  { url: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=900&q=80", cat: "Wedding", h: 600 },
+  { url: "https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=crop&w=900&q=80", cat: "Events", h: 750 },
 ];
 
 export function Portfolio() {
@@ -278,7 +277,7 @@ export function Portfolio() {
               <Tilt3D maxRotate={6} scale={1.015} className="overflow-hidden rounded-3xl">
                 <figure className="group relative w-full h-full border border-border rounded-3xl overflow-hidden preserve-3d">
                   <img
-                    src={`https://images.unsplash.com/photo-${g.src}?auto=format&fit=crop&w=900&q=80`}
+                    src={g.url}
                     alt={`${g.cat} photography ${i + 1}`}
                     loading="lazy"
                     style={{ height: g.h / 1.4 + 80 }}
