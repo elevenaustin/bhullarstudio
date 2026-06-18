@@ -50,8 +50,8 @@ export function Hero({ onBookClick }: { onBookClick?: () => void }) {
       {/* Background Image layer with smooth scroll-parallax vertical translation */}
       <motion.img
         src="/hero-bg.jpg"
-        alt="Bride and groom standing in historical stone archway"
-        className="absolute inset-0 w-full h-full object-cover object-[center_42%] scale-120 origin-center animate-fade-in"
+        alt="Timeless candid portrait of a bride"
+        className="absolute inset-0 w-full h-full object-cover object-[center_30%] scale-120 origin-center animate-fade-in"
         style={{ x: tx, y: syBg, willChange: "transform", backfaceVisibility: "hidden" }}
       />
       {/* Dark overlay for a warm, moody luxury aesthetic */}
