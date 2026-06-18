@@ -49,9 +49,9 @@ export function Hero({ onBookClick }: { onBookClick?: () => void }) {
     >
       {/* Background Image layer with smooth scroll-parallax vertical translation */}
       <motion.img
-        src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=2400&q=80"
-        alt="Bride and groom in cinematic heritage setting"
-        className="absolute inset-0 w-full h-full object-cover scale-120 origin-center animate-fade-in"
+        src="/hero-bg.jpg"
+        alt="Bride and groom standing in historical stone archway"
+        className="absolute inset-0 w-full h-full object-cover object-[center_42%] scale-120 origin-center animate-fade-in"
         style={{ x: tx, y: syBg, willChange: "transform", backfaceVisibility: "hidden" }}
       />
       {/* Dark overlay for a warm, moody luxury aesthetic */}
