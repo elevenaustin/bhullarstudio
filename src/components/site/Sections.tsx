@@ -66,15 +66,69 @@ export function About() {
 
 
 const services = [
-  { icon: Heart, title: "Wedding Photography", desc: "Cinematic coverage of every vow, every glance, every quiet ritual." },
-  { icon: Sparkles, title: "Pre-Wedding Shoots", desc: "Story-driven sessions in destinations chosen for the two of you." },
-  { icon: Video, title: "Cinematic Videography", desc: "Films cut like short stories, scored for the moments that matter." },
-  { icon: Cake, title: "Birthday Events", desc: "Candid, joyful coverage that captures the room and the people in it." },
-  { icon: Baby, title: "Baby Shoot", desc: "Calm, gentle sessions designed around your little one's rhythm." },
-  { icon: Camera, title: "Fashion Photography", desc: "Editorial sessions for brands, designers, and creative directors." },
-  { icon: Briefcase, title: "Commercial Photography", desc: "Product, lifestyle and brand imagery built for modern storefronts." },
-  { icon: Plane, title: "Drone Coverage", desc: "Aerial cinematography for venues, processions and destination weddings." },
-  { icon: BookOpen, title: "Album Design", desc: "Hand-curated, archival fine-art albums printed in Italy." },
+  { 
+    icon: Heart, 
+    title: "Wedding Photography", 
+    desc: "Cinematic coverage of every vow, every glance, every quiet ritual.",
+    image: "/create-1.jpg",
+    position: "object-[center_40%]"
+  },
+  { 
+    icon: Sparkles, 
+    title: "Pre-Wedding Shoots", 
+    desc: "Story-driven sessions in destinations chosen for the two of you.",
+    image: "/create-2.jpg",
+    position: "object-[center_35%]"
+  },
+  { 
+    icon: Video, 
+    title: "Cinematic Videography", 
+    desc: "Films cut like short stories, scored for the moments that matter.",
+    image: "/create-3.jpg",
+    position: "object-[center_30%]"
+  },
+  { 
+    icon: Cake, 
+    title: "Birthday Events", 
+    desc: "Candid, joyful coverage that captures the room and the people in it.",
+    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80",
+    position: "object-center"
+  },
+  { 
+    icon: Baby, 
+    title: "Baby Shoot", 
+    desc: "Calm, gentle sessions designed around your little one's rhythm.",
+    image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+    position: "object-center"
+  },
+  { 
+    icon: Camera, 
+    title: "Fashion Photography", 
+    desc: "Editorial sessions for brands, designers, and creative directors.",
+    image: "/create-4.jpg",
+    position: "object-[center_25%]"
+  },
+  { 
+    icon: Briefcase, 
+    title: "Commercial Photography", 
+    desc: "Product, lifestyle and brand imagery built for modern storefronts.",
+    image: "/create-5.jpg",
+    position: "object-[center_35%]"
+  },
+  { 
+    icon: Plane, 
+    title: "Drone Coverage", 
+    desc: "Aerial cinematography for venues, processions and destination weddings.",
+    image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=800&q=80",
+    position: "object-center"
+  },
+  { 
+    icon: BookOpen, 
+    title: "Album Design", 
+    desc: "Hand-curated, archival fine-art albums printed in Italy.",
+    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80",
+    position: "object-center"
+  },
 ];
 
 export function Services() {
@@ -94,28 +148,39 @@ export function Services() {
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.05}>
               <Tilt3D maxRotate={5} scale={1.02} className="h-full">
-                <div className="group relative h-full bg-white border border-border/60 rounded-3xl p-10 transition-all duration-700 hover:border-gold/40 hover:shadow-[0_30px_60px_-20px_rgba(197,168,128,0.12)] gold-glow flex flex-col justify-between overflow-hidden preserve-3d">
+                <div className="group relative h-[400px] border border-border/40 rounded-3xl p-10 transition-all duration-700 hover:border-gold/45 hover:shadow-[0_30px_60px_-20px_rgba(197,168,128,0.18)] gold-glow flex flex-col justify-between overflow-hidden preserve-3d">
+                  {/* Background Image with Gradient Overlay */}
+                  <div className="absolute inset-0 z-0 overflow-hidden">
+                    <img 
+                      src={s.image} 
+                      alt={s.title} 
+                      loading="lazy"
+                      className={`w-full h-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-110 ${s.position}`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/25 group-hover:via-black/50 transition-colors duration-500" />
+                  </div>
+
                   {/* Fine-art Curator Numbering */}
-                  <span className="absolute top-8 right-8 text-[9px] font-sans tracking-[0.25em] text-muted-foreground/40 group-hover:text-gold transition-colors duration-500">
+                  <span className="absolute top-8 right-8 text-[9px] font-sans tracking-[0.25em] text-white/50 group-hover:text-gold transition-colors duration-500 z-10">
                     {(i + 1).toString().padStart(2, '0')}
                   </span>
                   
-                  <div>
+                  <div className="relative z-10">
                     {/* Minimalist Icon wrapper */}
-                    <div className="size-12 rounded-2xl bg-gold/5 flex items-center justify-center text-gold mb-8 group-hover:bg-gold group-hover:text-white group-hover:scale-105 transition-all duration-500 translate-z-20">
+                    <div className="size-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white mb-8 group-hover:bg-gold group-hover:border-gold group-hover:scale-105 transition-all duration-500 translate-z-20">
                       <s.icon className="size-5 stroke-[1.5]" />
                     </div>
-                    <h3 className="text-display text-2xl leading-snug text-foreground group-hover:text-gold transition-colors duration-300 translate-z-20">
+                    <h3 className="text-display text-2xl leading-snug text-white group-hover:text-gold-soft transition-colors duration-300 translate-z-20">
                       {s.title}
                     </h3>
-                    <p className="mt-4 text-xs sm:text-sm text-muted-foreground leading-relaxed translate-z-10">
+                    <p className="mt-4 text-xs sm:text-sm text-white/75 leading-relaxed translate-z-10 line-clamp-2">
                       {s.desc}
                     </p>
                   </div>
 
                   {/* Interactive footer line */}
-                  <div className="mt-8 pt-5 border-t border-border/40 flex items-center justify-between">
-                    <span className="text-[9px] tracking-[0.2em] uppercase text-muted-foreground group-hover:text-gold transition-colors duration-500">
+                  <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between relative z-10">
+                    <span className="text-[9px] tracking-[0.2em] uppercase text-white/60 group-hover:text-gold transition-colors duration-500">
                       Inquire Session
                     </span>
                     <span className="text-gold text-xs transition-transform duration-500 group-hover:translate-x-1.5">
