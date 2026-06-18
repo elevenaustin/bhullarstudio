@@ -63,22 +63,22 @@ export function Stats() {
 
 const testimonials = [
   {
-    name: "Aisha & Rohan",
-    role: "Wedding · Udaipur",
+    name: "Harpreet & Gurpreet",
+    role: "Wedding · Sangrur",
     img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
     quote:
       "Harman and his team disappeared into our wedding like family — and brought back a film and album we will pass to our children. Worth every rupee, and then some.",
   },
   {
-    name: "Simran K.",
-    role: "Portrait · Chandigarh",
+    name: "Manpreet Kaur",
+    role: "Portrait · Patiala",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80",
     quote:
       "I have never felt more beautiful or more myself in front of a camera. The photos are tender, honest and breathtaking. They captured a feeling, not a pose.",
   },
   {
-    name: "Maison Verde",
-    role: "Commercial · Mumbai",
+    name: "Sukhwinder Singh",
+    role: "Commercial · Ludhiana",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
     quote:
       "Bhullar Photography redefined our brand visuals. Tight art direction, calm on set, and imagery that genuinely moved product. Our go-to studio from now on.",
