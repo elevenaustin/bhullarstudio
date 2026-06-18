@@ -85,7 +85,21 @@ export function Hero({ onBookClick }: { onBookClick?: () => void }) {
             </span>
           </h1>
           
-
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 1.0 }}
+            className="mt-10 translate-z-15"
+          >
+            <button
+              onClick={onBookClick}
+              className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gold text-white text-[11px] tracking-[0.25em] font-semibold uppercase hover:bg-white hover:text-foreground hover:scale-105 transition-all duration-500 border border-gold/10 shadow-[0_12px_40px_-8px_rgba(197,168,128,0.4)] cursor-pointer"
+            >
+              <Sparkles className="size-3.5 text-white/80 group-hover:text-gold transition-colors duration-500" />
+              Book A Slot
+            </button>
+          </motion.div>
 
           {/* Social Proof Star Ratings */}
           <motion.div
