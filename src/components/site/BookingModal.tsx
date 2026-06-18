@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, Phone, Mail, User, MapPin, Sparkles, Check, ChevronDown, Camera } from "lucide-react";
+import { X, Calendar, Phone, Mail, User, MapPin, Sparkles, Check, ChevronDown, Camera, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 
 interface BookingModalProps {
@@ -45,13 +45,25 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    
-    // Simulate booking process
+
+    const message = `✨ *New Slot Booking Request - Bhullar Studio* ✨\n\n` +
+      `👤 *Name:* ${formData.name}\n` +
+      `📞 *Phone:* ${formData.phone}\n` +
+      `✉️ *Email:* ${formData.email}\n` +
+      `📅 *Date:* ${formData.date}\n` +
+      `🎥 *Category:* ${formData.eventType.toUpperCase()}\n` +
+      `📍 *Location:* ${formData.location}\n` +
+      `📝 *Notes/Vision:* ${formData.notes || 'N/A'}`;
+
+    const whatsappUrl = `https://wa.me/919814944201?text=${encodeURIComponent(message)}`;
+
+    // Wait a brief moment to show status change, then open tab
     setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
       setSending(false);
       setSuccess(true);
-      toast.success("Slot request submitted successfully!");
-    }, 1500);
+      toast.success("Redirecting to WhatsApp to complete your booking...");
+    }, 1200);
   };
 
   const handleReset = () => {
@@ -324,15 +336,35 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     </h2>
                     <div className="h-px w-20 bg-gold/30 my-4" />
                     <p className="text-xs text-muted-foreground max-w-sm leading-relaxed mb-8">
-                      Thank you, <strong className="text-foreground">{formData.name}</strong>. We've reserved the slot request for <strong className="text-foreground">{formData.date}</strong> ({formData.eventType.toUpperCase()}).
-                      Our manager will contact you at <strong className="text-foreground">{formData.phone}</strong> within 1 hour to finalize details.
+                      Thank you, <strong className="text-foreground">{formData.name}</strong>. We've generated your booking details.
+                      WhatsApp has been launched to send this directly to the studio. If the window did not open, click the button below to send manually.
                     </p>
-                    <button
-                      onClick={handleReset}
-                      className="px-8 py-3 rounded-full border border-foreground/20 text-foreground text-[10px] tracking-[0.2em] font-semibold uppercase hover:bg-foreground hover:text-background transition-all cursor-pointer"
-                    >
-                      Done & Close
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-3 items-center">
+                      <a
+                        href={`https://wa.me/919814944201?text=${encodeURIComponent(
+                          `✨ *New Slot Booking Request - Bhullar Studio* ✨\n\n` +
+                          `👤 *Name:* ${formData.name}\n` +
+                          `📞 *Phone:* ${formData.phone}\n` +
+                          `✉️ *Email:* ${formData.email}\n` +
+                          `📅 *Date:* ${formData.date}\n` +
+                          `🎥 *Category:* ${formData.eventType.toUpperCase()}\n` +
+                          `📍 *Location:* ${formData.location}\n` +
+                          `📝 *Notes/Vision:* ${formData.notes || 'N/A'}`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-3.5 rounded-full bg-gold text-white text-[10px] tracking-[0.2em] font-semibold uppercase hover:bg-foreground hover:scale-105 border border-gold/15 transition-all flex items-center gap-2 shadow-md cursor-pointer"
+                      >
+                        <MessageCircle className="size-3.5" />
+                        Send on WhatsApp
+                      </a>
+                      <button
+                        onClick={handleReset}
+                        className="px-8 py-3.5 rounded-full border border-foreground/20 text-foreground text-[10px] tracking-[0.2em] font-semibold uppercase hover:bg-foreground hover:text-background transition-all cursor-pointer"
+                      >
+                        Close Window
+                      </button>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
