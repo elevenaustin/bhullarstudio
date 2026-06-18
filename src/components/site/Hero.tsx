@@ -44,7 +44,7 @@ export function Hero({ onBookClick }: { onBookClick?: () => void }) {
     <section
       id="home"
       ref={ref}
-      className="relative h-screen min-h-[700px] w-full overflow-hidden perspective-1000"
+      className="relative h-[115vh] min-h-[850px] w-full overflow-hidden perspective-1000"
       style={{ perspective: "1500px" }}
     >
       {/* Background Image layer with smooth scroll-parallax vertical translation */}
@@ -73,14 +73,6 @@ export function Hero({ onBookClick }: { onBookClick?: () => void }) {
             transformStyle: "preserve-3d"
           }}
         >
-          {/* Tagline */}
-          <div className="inline-flex items-center gap-4 mb-6 translate-z-10">
-            <span className="h-[1px] w-6 bg-gold/50" />
-            <p className="text-[10px] md:text-[11px] tracking-[0.55em] uppercase text-white/95 font-medium">
-              Fine Art Wedding & Editorial
-            </p>
-            <span className="h-[1px] w-6 bg-gold/50" />
-          </div>
           
           {/* Main Headline with high-fashion contrast */}
           <h1 className="text-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.8] translate-z-20 break-words text-white tracking-tight flex flex-col items-center select-none">
